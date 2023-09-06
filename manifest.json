@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Inter-script Test",
+    "description": "Extension Communication Test",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "tabs"
+      ],     
+    "content_scripts": [
+        {
+            "js": ["contentScript.js"],
+            "matches": [
+                "<all_urls>"
+            ]
+        }
+    ],
+    "background.service_worker": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+
+    "action": {
+        "default_popup": "test.html",
+        "default_icon": "hoshi_tiger.PNG"
+      }
+  }
